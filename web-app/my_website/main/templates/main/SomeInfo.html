@@ -1,0 +1,29 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="{% static 'main/bootstrap.min.css' %}">
+    <title>{{title}}</title>
+</head>
+<body>
+<h1 class="ml-20">Інформаційна сторінка</h1>
+{% for el in inf %}
+    {% if inf %}
+        <div class="alert alert-warning">
+            <h3>{{ el.name }}</h3>
+            <p>{{el.age}}</p>
+            <p>{{el.email}}</p>
+            <p>{{el.phone }}</p>
+            <p>{{el.HaveAuto}}</p>
+        </div>
+    {% else %}
+        <div>Записів немає.Для створення зайдіть до вікна "/admin" та створіть записи.</div>
+{% endif %}
+{% endfor %}
+</body>
+</html>
+
